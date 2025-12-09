@@ -1,0 +1,52 @@
+# ================================
+# AI Content Marketing Strategist
+# Requirements with Pinned Versions
+# ================================
+
+# ================================
+# Core AI Framework
+# ================================
+crewai==1.6.1
+
+# ================================
+# API & HTTP
+# ================================
+openai==1.54.0
+requests==2.31.0
+
+# ================================
+# Streamlit & UI
+# ================================
+streamlit==1.52.0
+streamlit-option-menu==0.4.0
+
+# ================================
+# Document Generation
+# ================================
+python-docx==1.2.0
+python-pptx==1.0.2
+openpyxl==3.1.5
+
+# ================================
+# Data Parsing & Processing
+# ================================
+pyyaml==6.0.1
+beautifulsoup4==4.14.0
+
+# ================================
+# Web Scraping & Data Collection
+# ================================
+apify-client==2.3.0
+
+# ================================
+# Configuration & Environment
+# ================================
+python-dotenv==1.1.1
+
+# ================================
+# Security Note
+# ================================
+# All versions are pinned for reproducibility and security
+# Update regularly and test thoroughly before deploying
+# Run: pip install -r requirements.txt
+# Or: pip install --upgrade -r requirements.txt (to update)

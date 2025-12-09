@@ -1,0 +1,45 @@
+# ================================
+# Streamlit Configuration
+# ================================
+# This file configures Streamlit app behavior and appearance
+# Safe to commit to git (no secrets here)
+
+[server]
+# Server configuration
+headless = true
+port = 8501
+enableCORS = true  # Required when XSRF protection is enabled
+enableXsrfProtection = true
+
+# File upload settings
+maxUploadSize = 200  # MB
+maxMessageSize = 200  # MB
+
+[browser]
+# Browser configuration
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[theme]
+# App theme (optional - can be customized)
+primaryColor = "#4A90E2"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F5F5"
+textColor = "#262730"
+font = "sans serif"
+
+[runner]
+# Runner configuration
+magicEnabled = true
+fastReruns = true
+
+[client]
+# Client configuration
+showErrorDetails = false  # Hide error details in production
+toolbarMode = "minimal"
+
+[logger]
+# Logging configuration
+level = "info"
+messageFormat = "%(asctime)s %(message)s"
