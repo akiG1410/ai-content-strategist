@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 from typing import Optional, Union
 from datetime import datetime
-from src.security.input_validator import InputValidator
+from security.input_validator import InputValidator
 
 
 class FileHandler:
@@ -18,7 +18,7 @@ class FileHandler:
     def __init__(self):
         """Initialize file handler"""
         # Lazy import to avoid circular dependency
-        from src.config.secure_config import config
+        from config.secure_config import config
         self.config = config.get_file_config()
         self.validator = InputValidator()
 

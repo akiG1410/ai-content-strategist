@@ -15,11 +15,11 @@ load_dotenv()
 # ================================
 # SECURITY IMPORTS
 # ================================
-from src.security.input_validator import InputValidator
-from src.security.rate_limiter import RateLimiter
-from src.security.auth import BetaAuthenticator
-from src.config.secure_config import config, check_configuration
-from src.utils.secure_logger import logger
+from security.input_validator import InputValidator
+from security.rate_limiter import RateLimiter
+from security.auth import BetaAuthenticator
+from config.secure_config import config, check_configuration
+from utils.secure_logger import logger
 
 # Helper functions for logging
 def log_user_action(action: str, context: dict = None):
@@ -48,14 +48,14 @@ if api_key:
     os.environ["OPENAI_API_BASE"] = "https://openrouter.ai/api/v1"
     os.environ["OPENAI_MODEL_NAME"] = "anthropic/claude-sonnet-4-20250514"
 
-from src.main import (
+from main import (
     brand_analyst,
     strategy_architect,
     content_calendar_specialist
 )
-from src.document_generator import generate_strategy_docx, generate_calendar_docx
-from src.excel_generator import generate_content_calendar_xlsx
-from src.content_parser import ContentCalendarParser, parse_strategies_output
+from document_generator import generate_strategy_docx, generate_calendar_docx
+from excel_generator import generate_content_calendar_xlsx
+from content_parser import ContentCalendarParser, parse_strategies_output
 import json
 import yaml
 

@@ -34,7 +34,7 @@ class SecureLogger:
     def __init__(self):
         """Initialize secure logger"""
         # Lazy import to avoid circular dependency
-        from src.config.secure_config import config
+        from config.secure_config import config
         self.log_config = config.get_logging_config()
         self.sanitize_pii = self.log_config['sanitize_pii']
 

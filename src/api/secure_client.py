@@ -6,7 +6,7 @@ import requests
 import time
 from typing import Optional, Dict, Any
 import streamlit as st
-from src.config.secure_config import config
+from config.secure_config import config
 
 
 class APIError(Exception):
