@@ -15,9 +15,29 @@ load_dotenv()
 # ================================
 # SECURITY IMPORTS
 # ================================
-from security import InputValidator, RateLimiter, BetaAuthenticator
-from config import config, check_configuration
-from utils.secure_logger import logger, log_user_action, log_generation_start, log_generation_complete, log_error
+from src.security.input_validator import InputValidator
+from src.security.rate_limiter import RateLimiter
+from src.security.auth import BetaAuthenticator
+from src.config.secure_config import config, check_configuration
+from src.utils.secure_logger import logger
+
+# Helper functions for logging
+def log_user_action(action: str, context: dict = None):
+    """Log user action"""
+    logger.info(f"User action: {action}", context=context)
+
+def log_generation_start(brand_name: str, phase: str):
+    """Log generation start"""
+    logger.info(f"Starting {phase} generation for {brand_name}", context={'brand': brand_name, 'phase': phase})
+
+def log_generation_complete(brand_name: str, phase: str, duration: float):
+    """Log generation complete"""
+    logger.info(f"Completed {phase} generation for {brand_name} in {duration:.2f}s",
+                context={'brand': brand_name, 'phase': phase, 'duration': duration})
+
+def log_error(error: Exception, context: dict = None):
+    """Log error"""
+    logger.error(f"{type(error).__name__}: {str(error)}", context=context)
 
 # ================================
 # CONFIGURE API WITH SECURITY
@@ -28,14 +48,14 @@ if api_key:
     os.environ["OPENAI_API_BASE"] = "https://openrouter.ai/api/v1"
     os.environ["OPENAI_MODEL_NAME"] = "anthropic/claude-sonnet-4-20250514"
 
-from main import (
+from src.main import (
     brand_analyst,
     strategy_architect,
     content_calendar_specialist
 )
-from document_generator import generate_strategy_docx, generate_calendar_docx
-from excel_generator import generate_content_calendar_xlsx
-from content_parser import ContentCalendarParser, parse_strategies_output
+from src.document_generator import generate_strategy_docx, generate_calendar_docx
+from src.excel_generator import generate_content_calendar_xlsx
+from src.content_parser import ContentCalendarParser, parse_strategies_output
 import json
 import yaml
 
