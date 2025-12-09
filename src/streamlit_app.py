@@ -17,7 +17,7 @@ load_dotenv()
 # ================================
 from security import InputValidator, RateLimiter, BetaAuthenticator
 from config import config, check_configuration
-from utils import logger, log_user_action, log_generation_start, log_generation_complete, log_error
+from utils.secure_logger import logger, log_user_action, log_generation_start, log_generation_complete, log_error
 
 # ================================
 # CONFIGURE API WITH SECURITY

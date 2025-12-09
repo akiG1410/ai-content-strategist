@@ -1,19 +1,3 @@
 """API client modules"""
-
-from .secure_client import (
-    SecureAPIClient,
-    APIError,
-    RateLimitError,
-    AuthenticationError,
-    test_api_connection,
-    get_client
-)
-
-__all__ = [
-    'SecureAPIClient',
-    'APIError',
-    'RateLimitError',
-    'AuthenticationError',
-    'test_api_connection',
-    'get_client'
-]
+# Intentionally simplified to avoid circular imports
+# Import directly: from api.secure_client import SecureAPIClient
