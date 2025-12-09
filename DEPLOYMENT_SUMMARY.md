@@ -240,7 +240,7 @@ OPENROUTER_API_KEY = "sk-or-v1-YOUR_ACTUAL_KEY_HERE"
 # ===========================================
 # REQUIRED
 # ===========================================
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "sk-or-v1-YOUR_ACTUAL_KEY_HERE"
 
 # ===========================================
 # OPTIONAL - Authentication
