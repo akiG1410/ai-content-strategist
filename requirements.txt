@@ -7,6 +7,8 @@
 # Core AI Framework
 # ================================
 crewai==1.6.1
+langchain==0.3.0
+langchain-openai==0.2.0
 
 # ================================
 # API & HTTP

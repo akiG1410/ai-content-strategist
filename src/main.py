@@ -2,7 +2,8 @@
 import os
 import json
 import yaml
-from crewai import Agent, Task, Crew, Process, LLM
+from crewai import Agent, Task, Crew, Process
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from models import BrandAnalysis, StrategiesOutput, ContentCalendar
 
@@ -36,9 +37,9 @@ def save_structured_outputs(brand_analysis_obj, strategies_obj, calendar_obj):
     print("   - outputs/structured_output.json (all combined)")
     print("   - outputs/structured_output.yaml (all combined)")
 
-# Configure LLM to use OpenRouter with LiteLLM provider
-llm = LLM(
-    model="openai/anthropic/claude-3.5-sonnet",  # openai/ prefix forces LiteLLM
+# Configure LLM to use OpenRouter with ChatOpenAI
+llm = ChatOpenAI(
+    model="anthropic/claude-sonnet-4-5-20250929",
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1",
     temperature=0.7
